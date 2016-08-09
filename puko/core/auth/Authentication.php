@@ -28,10 +28,10 @@ class Authentication extends AuthenticationModules
     {
         if (!isset(self::$Instance) && !is_object(self::$Instance)) {
             self::$Instance = new Authentication();
-            $encript = include(FILE . '/config/encription.php');
-            self::$method = $encript['method'];
-            self::$key = $encript['key'];
-            self::$identifier = $encript['identifier'];
+            $encryption = include(FILE . '/config/encryption.php');
+            self::$method = $encryption['method'];
+            self::$key = $encryption['key'];
+            self::$identifier = $encryption['identifier'];
         }
         self::GenerateToken();
         return self::$Instance;
